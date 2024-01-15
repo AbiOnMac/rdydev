@@ -20,3 +20,9 @@ students_data = [
   {first_name: "Daniel", last_name: "Taylor", email: "daniel.taylor@example.com", birth_date: Date.parse("1989-08-22"), gender: "Male", title_name: "Mr."},
   {first_name: "Emily", last_name: "Moore", email: "emily.moore@example.com", birth_date: Date.parse("1991-05-08"), gender: "Female", title_name: "Mrs."}
 ]
+
+students_data.each do |student_params|
+  title = Title.find_by(name: student_params[:title_name])
+  student_params.delete(:title_name) # Remove title_name from the student parameters
+  Student.create!(student_params.merge(title: title))
+end
