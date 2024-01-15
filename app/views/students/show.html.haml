@@ -1,0 +1,15 @@
+.container
+  %h1 Student Details
+  %p
+    %strong Name:
+    = @student.full_name
+  %p
+    %strong Gender:
+    = @student.gender
+  %p
+    %strong Email:
+    = @student.email
+  %p
+    %strong DOB:
+    = @student.birth_date
+  = link_to 'Back to Students List page', students_path

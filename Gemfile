@@ -88,3 +88,6 @@ gem "twitter-bootstrap-rails"
 
 # will_paginate gem
 gem "will_paginate", "~> 4.0"
+
+# haml-rails
+gem "haml-rails"
