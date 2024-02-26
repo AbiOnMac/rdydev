@@ -19,29 +19,29 @@ ActiveRecord::Schema.define(version: 20240225220818) do
     t.integer  "number_of_semesters", limit: 4
     t.date     "start_date"
     t.date     "end_date"
-    t.integer  "allocation", limit: 4
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "allocation",          limit: 4
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
-  create_table "students", frce: :cascade do |t|
-    t.string   "first_name", limit: 255
+  create_table "students", force: :cascade do |t|
+    t.string   "first_name",  limit: 255
     t.string   "middle_name", limit: 255
-    t.string   "last_namm", limit: 255
-    t.sring   "email", limit: 255
+    t.string   "last_name",   limit: 255
+    t.string   "email",       limit: 255
     t.date     "birth_date"
-    t.string   "gender", limit: 255
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "title_id", limit: 4
+    t.string   "gender",      limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "title_id",    limit: 4
   end
 
   add_index "students", ["title_id"], name: "index_students_on_title_id", using: :btree
 
   create_table "titles", force: :cascade do |t|
-    t.string   "name", limit: 255
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_foreign_key "students", "titles"
