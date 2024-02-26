@@ -26,3 +26,16 @@ students_data.each do |student_params|
   student_params.delete(:title_name) # Remove title_name from the student parameters
   Student.create!(student_params.merge(title: title))
 end
+
+# destroy all existing courses
+Course.destroy_all
+
+courses_data = [
+  {name: "Introduction to Ruby on Rails", description: "Learn the fundamentals of Ruby on Rails development.", number_of_semesters: 1, start_date: Date.today, end_date: Date.today + 3.months, allocation: 50},
+  {name: "Advanced Web Development", description: "Advanced concepts in web development using Ruby on Rails.", number_of_semesters: 2, start_date: Date.today, end_date: Date.today + 6.months, allocation: 40}
+]
+
+# create new course data
+courses_data.each do |course_attrs|
+  Course.create!(course_attrs)
+end

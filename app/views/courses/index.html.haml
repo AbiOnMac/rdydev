@@ -1,0 +1,24 @@
+.container
+  %h1 Courses
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Name
+        %th Description
+        %th Number of Semester
+        %th Start Date
+        %th End Date
+        %th Allocation
+        %th.text-center{:colspan => "3"} Action
+    %tbody
+      - @courses.each do |course|
+        %tr
+          %td= course.name
+          %td= course.description
+          %td= course.number_of_semesters
+          %td= course.start_date
+          %td= course.end_date
+          %td= course.allocation
+          %td= link_to 'Show', course_path(course)
+          %td= link_to 'Edit', edit_course_path(course)
+  = will_paginate @students
