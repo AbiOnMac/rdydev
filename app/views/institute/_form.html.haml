@@ -1,0 +1,9 @@
+- if @institute
+  = form_for(@institute) do |f|
+    .field
+      = f.label :name
+      = f.text_field :name
+    .actions
+      = f.submit 'Save'
+- else
+  %p No Institution found

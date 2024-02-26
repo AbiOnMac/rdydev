@@ -39,3 +39,10 @@ courses_data = [
 courses_data.each do |course_attrs|
   Course.create!(course_attrs)
 end
+
+# Clear existing data
+Institute.destroy_all
+
+# Add two Institute records
+Institute.create(name: "Institute 1")
+Institute.create(name: "Institute 2")

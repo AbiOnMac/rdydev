@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20240225220818) do
+ActiveRecord::Schema.define(version: 20240226031920) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name",                limit: 255
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20240225220818) do
     t.integer  "allocation",          limit: 4
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+  end
+
+  create_table "institutes", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "students", force: :cascade do |t|

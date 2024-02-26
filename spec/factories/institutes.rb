@@ -1,0 +1,5 @@
+FactoryBot.define do
+  factory :institute do
+    name { "MyString" }
+  end
+end
