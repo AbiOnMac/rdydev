@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20240225220818) do
 
   create_table "students", frce: :cascade do |t|
     t.string   "first_name", limit: 255
-    t.string   "middle_name limit: 255
-    t.string   "last_nammit: 255
+    t.string   "middle_name", limit: 255
+    t.string   "last_namm", limit: 255
     t.sring   "email", limit: 255
     t.date     "birth_date"
     t.string   "gender", limit: 255
