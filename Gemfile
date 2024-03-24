@@ -75,6 +75,7 @@ group :development do
   gem "pronto-flay", require: false, group: :pronto
   gem "pronto-reek", require: false, group: :pronto
   gem "pronto-standardrb", require: false, group: :pronto
+  gem "haml-rails"
 end
 
 group :test do
@@ -88,6 +89,3 @@ gem "twitter-bootstrap-rails"
 
 # will_paginate gem
 gem "will_paginate", "~> 4.0"
-
-# haml-rails
-gem "haml-rails"

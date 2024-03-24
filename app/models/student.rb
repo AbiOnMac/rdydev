@@ -4,6 +4,6 @@ class Student < ActiveRecord::Base
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, uniqueness: true
 
   def full_name
-    [title&.name.presence, first_name, middle_name, last_name].compact.join(" ")
+    [title.to_s.presence, first_name, middle_name, last_name].compact.join(" ")
   end
 end

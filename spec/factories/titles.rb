@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :title do
-    name { "MyString" }
+    name { "Mr." }
   end
 end
