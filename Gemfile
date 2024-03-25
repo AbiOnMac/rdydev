@@ -75,6 +75,7 @@ group :development do
   gem "pronto-flay", require: false, group: :pronto
   gem "pronto-reek", require: false, group: :pronto
   gem "pronto-standardrb", require: false, group: :pronto
+  gem "haml-rails"
 end
 
 group :test do

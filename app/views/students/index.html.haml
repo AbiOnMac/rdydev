@@ -1,0 +1,21 @@
+.container
+  %h1 Students
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Full Name
+        %th Email
+        %th Birth Date
+        %th Gender
+        %th.text-center{:colspan => "3"} Action
+    %tbody
+      - @students.each do |student|
+        %tr
+          %td= student.full_name
+          %td= student.email
+          %td= student.birth_date
+          %td= student.gender
+          %td= link_to 'Show', student_path(student)
+          %td= link_to 'Edit', edit_student_path(student)
+          %td= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' }
+  = will_paginate @students

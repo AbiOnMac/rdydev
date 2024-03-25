@@ -1,0 +1,18 @@
+= form_for(student) do |f|
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :gender
+    = f.text_field :gender
+  .field
+    = f.label :birth_date
+    = f.date_field :birth_date
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions
+    = f.submit 'Save'
