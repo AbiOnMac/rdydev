@@ -1,6 +1,11 @@
 name: Pronto
 on: [pull_request]
 
+all:
+  exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    
 jobs:
   pronto:
 
