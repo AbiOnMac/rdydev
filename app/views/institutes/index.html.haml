@@ -1,0 +1,14 @@
+.container
+  %h1 Institutions
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Name
+        %th.text-center{:colspan => "3"} Action
+    %tbody
+      - @institutes.each do |institute|
+        %tr
+          %td= institute.name
+          %td= link_to 'Show', institute_path(institute)
+          %td= link_to 'Edit', edit_institute_path(institute)
+  = will_paginate @institutes

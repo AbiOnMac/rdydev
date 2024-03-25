@@ -24,3 +24,11 @@ students_data.each do |student_params|
   student_params.delete(:title_name) # Remove title_name from the student parameters
   Student.create!(student_params.merge(title: title))
 end
+
+# Clear existing data
+Institute.destroy_all
+
+# Create 10 Institute records
+11.times do |i|
+  Institute.create(name: "Institute #{i + 1}")
+end
