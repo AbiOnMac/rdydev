@@ -1,0 +1,15 @@
+.container
+  %h1 Course Details
+  %p
+    %strong Name:
+    = @course.name
+  %p
+    %strong Description:
+    = @course.description
+  %p
+    %strong Number of semesters:
+    = @course.number_of_semesters
+  %p
+    %strong Allocation:
+    = @course.allocation
+  = link_to 'Back to Course List page', courses_path

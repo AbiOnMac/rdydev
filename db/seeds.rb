@@ -24,3 +24,37 @@ students_data.each do |student_params|
   student_params.delete(:title_name) # Remove title_name from the student parameters
   Student.create!(student_params.merge(title: title))
 end
+
+# destroy all existing courses
+Course.destroy_all
+
+# define course data
+require "date"
+
+courses_data = [
+  {name: "Introduction to Ruby on Rails", description: "Learn the fundamentals of Ruby on Rails development.", number_of_semesters: 1, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-06-25"), allocation: 50},
+  {name: "Advanced Web Development", description: "Advanced concepts in web development using Ruby on Rails1.", number_of_semesters: 2, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Artificial Intelligence", description: "Explore the realm of Artificial Intelligence.", number_of_semesters: 3, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Game Development", description: "Learn the essentials of game development.", number_of_semesters: 4, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Graphics Designing", description: "Master the art of graphics designing.", number_of_semesters: 3, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Social", description: "Understand the dynamics of social interactions in the digital age.", number_of_semesters: 2, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Science", description: "Delve into various scientific disciplines.", number_of_semesters: 1, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "History", description: "Explore the rich tapestry of human history.", number_of_semesters: 2, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Learning to Communicate", description: "Enhance your communication skills.", number_of_semesters: 3, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "Computer Science", description: "Dive deep into the field of computer science.", number_of_semesters: 4, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40},
+  {name: "JAVA Programming - I", description: "Master Java programming fundamentals.", number_of_semesters: 5, start_date: Date.parse("2024-03-25"), end_date: Date.parse("2024-09-25"), allocation: 40}
+]
+
+# Format dates in the array
+courses_data.each do |course|
+  course[:start_date] = course[:start_date].strftime("%Y-%m-%d")
+  course[:end_date] = course[:end_date].strftime("%Y-%m-%d")
+end
+
+# Display courses_data
+puts courses_data.inspect
+
+# create new course data
+courses_data.each do |course_attrs|
+  Course.create!(course_attrs)
+end
