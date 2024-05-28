@@ -7,7 +7,6 @@
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
   },
   "forwardPorts": [3000],
-  "onCreateCommand": "bin/setup",
   "customizations": {
     "vscode": {
       "extensions": [
