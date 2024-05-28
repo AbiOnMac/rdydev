@@ -15,7 +15,7 @@ services:
       - db
       - redis
     command: sleep infinity
-
+  
   db:
     image: mysql:8
     restart: unless-stopped
@@ -25,16 +25,17 @@ services:
         "--sql_mode=TRADITIONAL",
         "--character-set-server=utf8mb4",
         "--collation-server=utf8mb4_unicode_ci",
-        "--default_authentication_plugin=mysql_native_password",
-        "--bind-address=0.0.0.0"
+        "--authentication_policy=mysql_native_password",
+        "--mysql-native-password=ON"
       ]
     volumes:
-      - mysql-data-volume:/var/lib/mysql
-      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./config/server.my.cnf:/etc/mysql/conf.d/my.cnf:ro
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      - MYSQL_ROOT_PASSWORD=example
     ports:
-      - "3306:3306"
+      - "13306:3306"
   
   redis:
     image: "redis:6"
