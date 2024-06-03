@@ -18,16 +18,7 @@ services:
   
   db:
     image: mysql:8
-    restart: unless-stopped
-    command:
-      [
-        "mysqld",
-        "--sql_mode=TRADITIONAL",
-        "--character-set-server=utf8mb4",
-        "--collation-server=utf8mb4_unicode_ci",
-        "--authentication_policy=mysql_native_password",
-        "--mysql-native-password=ON"
-      ]
+    restart: unless-stopped   
     volumes:
       - ./config/server.my.cnf:/etc/mysql/conf.d/my.cnf:ro
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
